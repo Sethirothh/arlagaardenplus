@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+  <nav>
+    <div class="burger" onclick="activateMenu()">
+
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul style="transform:translate(-100%)">
+      <div class="close" onclick="activateMenu()">
+        <span></span>
+        <span></span>
+      </div>
+      <div class="profile">
+      </div>
+      <h4>Spørgsmål</h4>
+    <ul>
+      <li onclick="subNav()"><img src="img/ko.svg" alt=""><p>Køer</p>
+          <ul class="subnav">
+          </ul>
+      </li>
+
+      <li><a href="#" onclick="showPage()"><img src="img/flok.svg" alt="">Din Flok</a></li>
+      <li><a href="#" onclick="showPage()"><img src="img/energi.svg" alt="">Energi</a></li>
+      <li><a href="#" onclick="showPage()"><img src="img/gaard.svg" alt="">Gården</a></li>
+      <li><a href="#" onclick="showPage()"><img src="img/data.svg" alt="">Mine Data</a></li>
+      </ul>
+    </ul>
+    <div class="logo">
+      <img src="img/Arla_Logo.png" alt="">
+    </div>
+  </nav>
+<main>
+  <section id="login" class="page">
+    <header class="topbar">
+      <h2>Login</h2>
+    </header>
+    <!-- firebase auth container  -->
+    <section id="firebaseui-auth-container"></section>
+  </section>
+  <section class="page" id="home">
+
+  </section>
+  <section class="page" id="start">
+    <h1>Start</h1>
+  </section>
+  <section class="page" id="dashboard"></section>
+  <section class="page" id="question"></section>
+  <section class="page" id="info"></section>
+</main>
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+<!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestore.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-firestore.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/spa.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
