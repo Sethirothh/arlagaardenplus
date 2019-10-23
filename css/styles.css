@@ -40,7 +40,7 @@ body {
 }
 
 nav {
-  position: relative;
+  position: fixed;
   height:80px;
   width:100%;
   background-color:white;
@@ -53,7 +53,7 @@ nav {
   transform:translate(0);
 }
 nav > ul {
-  position: absolute;
+  position: fixed;
   left:0;
   top:0px;
   width:70%;
@@ -68,11 +68,15 @@ nav > ul > .close {
   top:10px;
   right:10px;
   height:40px;
-  z-index: 99;
+  z-index: 4;
   width:40px;
   display:flex;
   justify-content: center;
   flex-direction: column;
+}
+#home {
+  background:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../img/koer.jpg")left no-repeat fixed;
+
 }
 .profile {
   height:15vh;
@@ -88,12 +92,15 @@ nav > ul > .close {
 nav > ul > ul {
   list-style: none;
   margin:40px;
+
 }
-nav ul > li {
+
+nav ul > li, nav ul > li a  {
   width:100%;
-  height:80px;
+  min-height:80px;
   color:var(--granite);
   display:flex;
+  flex-wrap:wrap;
   outline:0;
   align-items:center;
   text-decoration: none;
@@ -112,7 +119,64 @@ nav > ul > h4{
   color:var(--granite);
 }
 .subnav {
-  display:none;
+  position:absolute;
+  top:0;
+  left:0;
+  height:100vh;
+  min-height:100vh;
+  margin:0;
+  background-color:white;
+  z-index: 5;
+  transition:.5s;
+  width:100%;
+  transform:translateX(-100%);
+  padding:50px 0;
+}
+
+.subnav > li {
+  height:60px;
+  display:flex;
+  align-items: center;
+  width:80%;
+  padding:0 20px;
+}
+.subclose {
+  position:absolute;
+  left:10px;
+  top:10px;
+  height:35px;
+  width:35px;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.subclose img {
+  transform:rotate(180deg);
+  width:100%;
+}
+.trueQuestion {
+  color:var(--forest);
+  position: relative;
+}
+.trueQuestion::after {
+  content:url('../img/flueben.svg');
+  position: absolute;
+  width:40px;
+  height:40px;
+  right:-20%;
+}
+.subclose svg > polyline {
+  stroke-width:1;
+  stroke:#000;
+  fill:none;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.subclose:hover polyline {
+  fill:#000;
+}
+.activesub {
+  transform:translateX(0);
 }
 .profile::after {
   content:'';
@@ -156,12 +220,13 @@ nav > ul > h4{
 .page {
   width:100%;
   min-height:100vh;
-  display:flex !important;
+  display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+#
 
 
 /*    */

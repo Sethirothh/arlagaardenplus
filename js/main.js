@@ -1,9 +1,9 @@
-"use strict";
+"use strict"
 // Listen on authentication state change
 firebase.auth().onAuthStateChanged(function(user) {
   let nav = document.querySelector('nav');
   if (user) { // if user exists and is authenticated
-    homeContent("home", user);
+    homeContent(user);
     appendUser(user);
     nav.classList.add("active");
   } else { // if user is not logged in
@@ -13,7 +13,45 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
   showLoader(false);
 });
+questionRef.onSnapshot(function(snapshotData) {
+  let questions = snapshotData.docs;
+  appendQuestions(questions);
+});
+function subNav(sub){
+  console.log(sub);
+  sub.innerHTML += `
+    <div class="subclose">
+    <img src="img/arrow.svg">
+  </svg>
+  </div>
+  `;
+  if (sub.classList.contains("activesub")) {
+    sub.classList.remove("activesub");
+  }else{
+    sub.classList.add("activesub");
+  }
+}
 
+function appendQuestions(questions) {
+  let htmlTemplate = "";
+  for (let question of questions) {
+    console.log(question.data());
+    if (question.data().answered == true) {
+      htmlTemplate += `
+      <li class="trueQuestion">
+        <p>${question.data().question}</p>
+      </li>
+      `;
+    } else {
+      htmlTemplate += `
+      <li>
+        <p>${question.data().question}</p>
+      </li>
+      `;
+    }
+  }
+  document.querySelectorAll('.subnav').innerHTML = htmlTemplate;
+}
 function  activateMenu(){
   let ul =  document.querySelector("nav > ul");
   if (ul.style.transform == "translate(-100%)") {
@@ -39,11 +77,11 @@ document.querySelector('.profile').innerHTML = htmlTemplate;
 };
 
 
-function homeContent(page, user){
+function homeContent(user){
     let htmlTemplate = `
     <h1>Velkommen ${user.displayName}</h1>
     `;
     document.querySelector('#home').innerHTML = htmlTemplate;
 
-showPage(page);
+setDefaultPage();
 }
