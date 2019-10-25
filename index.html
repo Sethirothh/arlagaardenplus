@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/styles.css">
-  <title>Document</title>
+  <title>ArlaGården</title>
 </head>
 <body>
   <div id="loader">
@@ -29,13 +29,10 @@
     <ul>
       <li onclick="subNav(sub1)"><img src="img/ko.svg" alt=""><p>Køer</p>
           <ul class="subnav" id="sub1">
-
           </ul>
       </li>
-
       <li onclick="subNav(sub2)"><img src="img/flok.svg" alt=""><p>Din Flok</p>
         <ul class="subnav" id="sub2">
-          
         </ul>
       </li>
       <li><a href="#" onclick="showPage()"><img src="img/energi.svg" alt="">Energi</a></li>
@@ -61,7 +58,22 @@
   <section class="page" id="start">
     <h1>Start</h1>
   </section>
-  <section class="page" id="dashboard"></section>
+  <section class="page" id="dashboard">
+    <div class="dashboard">
+      <div class="data-btns">
+        <div class="data-card"></div>
+        <div class="data-card"></div>
+        <div class="data-card"></div>
+        <div class="data-card"></div>
+        <div class="data-card"></div>
+      </div>
+      <div class="chart"></div>
+      <div class="tips"></div>
+      <div class="carbon"></div>
+      <div class="comparison"></div>
+      <div class="region"></div>
+    </div>
+  </section>
   <section class="page" id="question"></section>
   <section class="page" id="info"></section>
 </main>

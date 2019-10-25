@@ -12,6 +12,7 @@ function hideAllPages() {
 // show page or tab
 function showPage(pageId) {
   hideAllPages();
+  console.log(pageId);
   document.querySelector(`#${pageId}`).style.display = "flex";
   location.href = `#${pageId}`;
   setActiveTab(pageId);
