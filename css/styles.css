@@ -308,39 +308,51 @@ nav > ul > h4{
       "ch ch ch ch ch region region tips tips tips"
       "ch ch ch ch ch region region tips tips tips"
   ;
-  grid-gap: 5px;
+  grid-gap: 30px;
 }
 .data-btns {
     grid-area: db;
     display:flex;
     align-items: center;
+    position: relative;
     justify-content: space-between;
 }
+.data-heading {
+  position: absolute;
+  top:0;
+  left:0;
+  text-transform: uppercase;
+}
 .data-card {
-  width:20%;
-  height:80%;
+  width:18%;
+  min-height:70%;
   border-radius:20px;
   background-color:var(--lightgrey);
 }
 .chart {
     grid-area: ch;
-    background-color:blue;
+    border-radius:20px;
+    background-color:var(--lightgrey);
 }
 .tips {
     grid-area: tips;
-    background-color:green;
+    border-radius:20px;
+    background-color:var(--lightgrey);
 }
 .carbon {
     grid-area: carbon;
-    background-color: black;
+    border-radius:20px;
+    background-color:var(--lightgrey);
 }
 .comparison {
     grid-area:comp;
-    background-color:var(--slate);
+    border-radius:20px;
+    background-color:var(--lightgrey);
 }
 .region {
     grid-area:region;
-    background-color:var(--forest);
+    background-color:var(--lightgrey);
+    border-radius:20px;
 }
 
 /*    */
