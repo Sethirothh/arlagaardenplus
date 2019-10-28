@@ -310,6 +310,9 @@ nav > ul > h4{
   ;
   grid-gap: 30px;
 }
+.dashboard > div {
+  padding:20px;
+}
 .data-btns {
     grid-area: db;
     display:flex;
@@ -329,10 +332,43 @@ nav > ul > h4{
   border-radius:20px;
   background-color:var(--lightgrey);
 }
+.chart > .myChart {
+  width:400px;
+  height:400px;
+}
 .chart {
     grid-area: ch;
     border-radius:20px;
+    width:800px;
+    height:500px;
+    padding:30px;
     background-color:var(--lightgrey);
+}
+.data-card {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding:20px 0;
+}
+.data-card .percentage {
+  padding:30px 0;
+}
+.positive {
+  color:var(--grass);
+}
+.positive > svg {
+  transform:rotate(-90deg);
+}
+.negative {
+  color:#D01818;
+}
+.negative > svg {
+  transform:rotate(90deg);
+}
+.negative > svg path {
+  fill:#D01818;
+  stroke:#D01818;
 }
 .tips {
     grid-area: tips;
@@ -344,10 +380,48 @@ nav > ul > h4{
     border-radius:20px;
     background-color:var(--lightgrey);
 }
+.carbon-net > img {
+  width: 200px;
+}
+.carbon-net {
+  position:relative;
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.carbon-net > p {
+  position:absolute;
+  font-size:30px;
+}
 .comparison {
     grid-area:comp;
     border-radius:20px;
     background-color:var(--lightgrey);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.circle-path path {
+    transform:translate(0 0);
+    fill: none;
+  stroke-dasharray: 384.8408;
+  stroke:#fff;
+  stroke-width:5;
+  stroke-dashoffset: 384.8408;
+}
+.circle-path path:nth-child(2) {
+  stroke-dasharray: 384.8408;
+  stroke-dashoffset: 250.5;
+  stroke:#006C3A;
+  stroke-width:15;
+  animation:2s datapath;
+}
+@keyframes datapath {
+  from {
+    stroke-dashoffset:0;
+  }
 }
 .region {
     grid-area:region;

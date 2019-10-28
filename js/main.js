@@ -13,12 +13,17 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
   showLoader(false);
 });
+
+
 function subQuestions(sub){
 questionRef.onSnapshot(function(snapshotData) {
   let questions = snapshotData.docs;
   appendQuestions(questions, sub);
 });
 }
+
+
+
 function subNav(sub){
   let subnav = document.querySelector(`#${sub.id}`);
   subnav.innerHTML = "";
@@ -156,7 +161,7 @@ Du vil hurtigt blive guiden igennem funktionaliteten på siden, du kan altid ski
   document.querySelector('#start').innerHTML = htmlTemplate;
 }
 
-  let i = 1;
+  let i = 0;
 function contentIteration(){
   if (i < 3) {
     console.log(i++);
@@ -167,3 +172,74 @@ function contentIteration(){
     showPage("dashboard");
   }
 }
+
+let pieChart = document.getElementById('pieChart').getContext('2d');
+var myPieChart = new Chart(pieChart, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: [75, 25],
+        backgroundColor: ["#006C3A", "#ececeb"],
+        fill: 'nofill'
+      }],
+      labels: ["", "Køer"]
+    },
+    animation: {
+      animateRotate:  true
+    },
+    options: {
+        title: {
+          display: false
+        },
+        legend: {
+          display: false,
+        },
+      }
+});
+
+let chartContainer = document.getElementById('infoChart').getContext('2d');
+let label = ['January', 'February', 'March', 'April', 'May', 'June', 'August'];
+let data = [40, 50, 43, 40, 44, 38, 40];
+let largest = data[0]   ;
+let smallest = data[0];
+for (let i = 1; i < data.length; i++) {
+    if (data[i] > largest) {
+        largest = data[i] + 5;
+    }
+    else if(data[i] < smallest) {
+        smallest = data[i] - 5;
+    }
+};
+let chart = document.getElementById('chart');
+let myLineChart = new Chart(chartContainer, {
+  type: 'line',
+  data: {
+    datasets: [{
+      data: data,
+      borderColor: '#006C3A',
+      fill: 'nofill'
+    }],
+    labels: label,
+  },
+  options: {
+      title: {
+        display: false
+      },
+      legend: {
+        display: false,
+      },
+      scales: {
+          yAxes: [{
+              ticks: {
+                  max: largest,
+                  min: smallest,
+                  stepSize: 5
+              }
+          }],
+          xAxes: [{
+            gridLines: {
+      tickMarkLength: 10,
+          },
+        }]
+      }
+}});
