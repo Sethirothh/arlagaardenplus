@@ -148,7 +148,7 @@ Du vil hurtigt blive guiden igennem funktionaliteten på siden, du kan altid ski
     </div>
     </div>
     <div>
-    <a href="#" class="btn-start green" onclick="contentIteration()">Næste</a>
+    <button class="btn-start green" onclick="contentIteration()">Næste</button>
     <div class="radio">
       <span class="active" id="radio-1"></span>
         <span id="radio-2"></span>
