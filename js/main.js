@@ -88,7 +88,7 @@ document.querySelector('.profile').innerHTML = htmlTemplate;
 function homeContent(user){
     let htmlTemplate = `
     <h1>ArlaGården Plus</h1>
-    <a href="#start" class="btn-start" onclick="showPage(start.id), userHandler(2), contentIteration()">Start Undersøgelsen</a>
+    <a href="#start" class="btn-start green" onclick="showPage(start.id), userHandler(2), contentIteration()">Start Undersøgelsen</a>
     `;
     document.querySelector('#home').innerHTML = htmlTemplate;
 
@@ -148,7 +148,7 @@ Du vil hurtigt blive guiden igennem funktionaliteten på siden, du kan altid ski
     </div>
     </div>
     <div>
-    <button class="btn-start green" onclick="contentIteration()">Næste</button>
+    <a href="#" class="btn-start green" onclick="contentIteration()">Næste</a>
     <div class="radio">
       <span class="active" id="radio-1"></span>
         <span id="radio-2"></span>

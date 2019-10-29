@@ -265,7 +265,7 @@ nav > ul > h4{
   position: absolute;
   top:20%;
   width:100%;
-  padding:10%;
+  padding:5%;
   background-color:white;
   transform:translateX(120%);
   transition:.6s;
@@ -402,26 +402,6 @@ nav > ul > h4{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-.circle-path path {
-    transform:translate(0 0);
-    fill: none;
-  stroke-dasharray: 384.8408;
-  stroke:#fff;
-  stroke-width:5;
-  stroke-dashoffset: 384.8408;
-}
-.circle-path path:nth-child(2) {
-  stroke-dasharray: 384.8408;
-  stroke-dashoffset: 250.5;
-  stroke:#006C3A;
-  stroke-width:15;
-  animation:2s datapath;
-}
-@keyframes datapath {
-  from {
-    stroke-dashoffset:0;
-  }
 }
 .region {
     grid-area:region;
